@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Image Processing — Filtering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Digital Image Processing</h1>
+        <p>Konsep Filtering pada Citra Digital</p>
+    </header>
+
+    <nav>
+        <a href="#intro">Pendahuluan</a>
+        <a href="#filters">Jenis-jenis Filtering</a>
+        <a href="#experiment">Eksperimen</a>
+        <a href="#analysis">Analisis & Kesimpulan</a>
+    </nav>
+
+    <main>
+       
+        <section id="intro">
+            <h2>Pendahuluan</h2>
+            <p>
+                <b>Pengolahan citra digital (Digital Image Processing)</b> adalah cabang ilmu komputer
+                yang berfokus pada manipulasi gambar secara numerik. Salah satu teknik dasar yang paling penting
+                adalah <b>filtering</b> — proses mengubah nilai piksel berdasarkan lingkungan sekitarnya
+                untuk meningkatkan kualitas atau mengekstrak fitur tertentu.
+            </p>
+            <p>
+                Filtering digunakan untuk mengurangi <i>noise</i>, menajamkan citra, dan menonjolkan struktur
+                atau tepi objek. Pada eksperimen ini, kita akan membandingkan beberapa jenis filter populer
+                menggunakan pustaka <code>OpenCV</code> di Python.
+            </p>
+        </section>
+
+        
+        <section id="filters">
+            <h2>Teori Singkat Tiap Jenis Filter</h2>
+
+            <article class="filter-info">
+                <h3>1. Gaussian Filter</h3>
+                <p>
+                    Gaussian filter bekerja dengan memberikan efek <b>blur</b> (penghalusan)
+                    menggunakan fungsi Gaussian. Filter ini efektif untuk mengurangi noise acak
+                    tanpa terlalu menghapus detail penting pada gambar.
+                </p>
+                <p><b>Fungsi utama:</b> <i>Noise reduction</i> dan <i>smoothing</i>.</p>
+            </article>
+
+            <article class="filter-info">
+                <h3>2. Median Filter</h3>
+                <p>
+                    Median filter mengganti nilai setiap piksel dengan nilai median dari area tetangganya.
+                    Teknik ini sangat baik untuk menghapus noise berbentuk titik hitam-putih
+                    (dikenal sebagai <b>salt-and-pepper noise</b>).
+                </p>
+                <p><b>Fungsi utama:</b> Menghapus noise tanpa merusak tepi.</p>
+            </article>
+
+            <article class="filter-info">
+                <h3>3. Sharpening Filter</h3>
+                <p>
+                    Sharpening filter meningkatkan ketajaman gambar dengan menonjolkan perbedaan kontras
+                    antara piksel berdekatan. Hal ini membuat detail seperti garis dan tekstur lebih terlihat jelas.
+                </p>
+                <p><b>Fungsi utama:</b> Menajamkan tepi dan memperjelas struktur.</p>
+            </article>
+
+            <article class="filter-info">
+                <h3>4. Laplacian Filter</h3>
+                <p>
+                    Laplacian filter menghitung perbedaan intensitas antar piksel menggunakan
+                    operator turunan kedua. Filter ini berguna untuk mendeteksi tepi (<i>edge detection</i>)
+                    karena menyoroti area dengan perubahan intensitas tajam.
+                </p>
+                <p><b>Fungsi utama:</b> Deteksi tepi objek dalam citra.</p>
+            </article>
+        </section>
+
+        
+        <section id="experiment">
+            <h2>Perbedaan tiap=tiap Filter</h2>
+            <p>
+                Pilih salah satu jenis filter di bawah ini untuk melihat hasilnya secara visual:
+            </p>
+
+            <div class="filter-buttons">
+                <button onclick="showFilter('original')">Gambar Asli</button>
+                <button onclick="showFilter('gaussian')">Gaussian Filter</button>
+                <button onclick="showFilter('median')">Median Filter</button>
+                <button onclick="showFilter('sharpen')">Sharpening</button>
+                <button onclick="showFilter('laplacian')">Laplacian</button>
+            </div>
+
+            <div id="filterDisplay" class="filter-display">
+                <img id="filterImage" src="images/original.png" alt="Filter Result">
+                <p id="filterText">Gambar asli sebelum proses filtering dilakukan.</p>
+            </div>
+        </section>
+
+       
+        <section id="analysis">
+            <h2>Analisis dan Kesimpulan</h2>
+            <p>
+                Setelah dilakukan proses filtering terhadap citra uji, diperoleh hasil sebagai berikut:
+            </p>
+
+            <ul>
+                <li>
+                    <b>Gaussian Filter</b> berhasil menghaluskan gambar dan mengurangi noise acak,
+                    tetapi menyebabkan sedikit kehilangan ketajaman.
+                </li>
+                <li>
+                    <b>Median Filter</b> memberikan hasil lebih baik untuk noise berbentuk titik,
+                    sambil mempertahankan tepi objek.
+                </li>
+                <li>
+                    <b>Sharpening Filter</b> meningkatkan kontras dan detail, membuat tekstur lebih jelas
+                    namun juga dapat menonjolkan noise jika gambar aslinya sudah kasar.
+                </li>
+                <li>
+                    <b>Laplacian Filter</b> menyoroti area batas antar objek, cocok untuk
+                    aplikasi deteksi tepi seperti pengenalan bentuk.
+                </li>
+            </ul>
+
+            <p>
+                <b>Kesimpulan:</b><br>
+                Setiap filter memiliki karakteristik unik. 
+                - Untuk <b>perbaikan kualitas gambar</b>, gunakan Gaussian atau Median.  
+                - Untuk <b>analisis struktur dan deteksi tepi</b>, gunakan Laplacian.  
+                - Untuk <b>peningkatan visual</b>, gunakan Sharpening.
+                Dalam praktik pengolahan citra nyata, sering kali kombinasi dari beberapa filter digunakan
+                untuk mencapai hasil optimal sesuai kebutuhan.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Digital Image Processing Project by <b>Amesha</b></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

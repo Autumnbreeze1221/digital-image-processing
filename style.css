@@ -1,0 +1,174 @@
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f3f6f9;
+    color: #222;
+    line-height: 1.7;
+}
+
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #007bff, #00c4ff);
+    color: white;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0.7rem;
+    gap: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+nav a:hover {
+    color: #0056b3;
+    border-bottom: 2px solid #007bff;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    color: #0056b3;
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.filter-info {
+    background-color: #f9fbfd;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #007bff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+}
+
+.filter-info h3 {
+    color: #0056b3;
+    margin-top: 0;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.filter-display {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.filter-display img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: opacity 0.4s ease;
+}
+
+#filterText {
+    font-style: italic;
+    margin-top: 0.8rem;
+    color: #444;
+}
+
+ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+footer {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-top: 3px solid #0056b3;
+}
+
+footer b {
+    color: #ffea00;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .filter-display img {
+        max-width: 95%;
+    }
+}
